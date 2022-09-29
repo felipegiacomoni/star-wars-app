@@ -1,15 +1,17 @@
 import React from "react";
-import '../styles/CategoryButton.css'
+import '../styles/CategoryButton.css';
+import { connect } from 'react-redux';
+import { fetchResults } from "../actions";
 
-const CategoryButton = ({ category }) => {
+const CategoryButton = props => {
     const onButtonClick = event => {
-        console.log(category.param)
+        props.fetchResults(props.category.param);
         event.preventDefault();
     }
 
     return (
-        <button className="ui button" onClick={onButtonClick}>{category.label}</button>
+        <button className="ui button" onClick={onButtonClick}>{props.category.label}</button>
     )
 }
 
-export default CategoryButton;
+export default connect(null, {fetchResults})(CategoryButton);
