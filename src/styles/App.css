@@ -1,0 +1,8 @@
+.background-app{
+    background-color: black;
+}
+
+.background-logo-app{
+    display: flex;
+    justify-content: center;
+}

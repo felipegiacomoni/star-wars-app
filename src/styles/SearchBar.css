@@ -1,0 +1,12 @@
+.input-search-bar{
+    margin-right: 5px !important;
+}
+
+.search-bar-background{
+    background: black !important;
+}
+
+.div-search-bar{
+    display: flex;
+    width: 100%;
+}
