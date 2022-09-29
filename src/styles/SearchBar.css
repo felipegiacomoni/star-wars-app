@@ -4,9 +4,14 @@
 
 .search-bar-background{
     background: black !important;
+    display: flex;
 }
 
 .div-search-bar{
     display: flex;
     width: 100%;
+}
+
+.form-search-bar{
+    width: 100% !important;
 }
