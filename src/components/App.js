@@ -8,7 +8,7 @@ const App = () => {
     return (
         <div className="background-app">
             <div className="background-logo-app">
-                <img src={logo}/>
+                <img src={logo} alt="Star Wars API"/>
             </div>
             <SearchBar />
             <ListResult />
