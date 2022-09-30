@@ -8,6 +8,7 @@ const Card = props => {
             <div className="card">
                 <div className="content">
                 <img 
+                    alt={props.category.label}
                     className="right floated mini ui image" 
                     src={require(`../styles/${props.category.icon !== undefined ? props.category.icon : 'star_wars_logo.png'}`)}
                 />
