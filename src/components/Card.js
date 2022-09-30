@@ -9,7 +9,7 @@ const Card = props => {
                 <div className="content">
                 <img 
                     className="right floated mini ui image" 
-                    src={require(`../styles/${props.category.icon != undefined ? props.category.icon : 'star_wars_logo.png'}`)}
+                    src={require(`../styles/${props.category.icon !== undefined ? props.category.icon : 'star_wars_logo.png'}`)}
                 />
                 <div className="header">{props.item.name}</div>
                 <div className="description">
