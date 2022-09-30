@@ -1,16 +1,11 @@
 import starWars from "../apis/starWars";
+//import _ from 'lodash'
 
 export const fetchResults = category => {
     return async dispatch => {
-        const response = await starWars.get(`/${category}`);
+        const response = await starWars.get(`/${category.param}`);
         dispatch({type:'FETCH_RESULTS', payload: response.data.results});
-    }
-}
-
-export const filterResults = filter => {
-    return (dispatch, getState) => {
-        const filteredResults = getState().results.filter(elem => elem.name === filter);
-        console.log(filteredResults);
-        dispatch({type: 'FETCH_RESULTS', payload: filteredResults})
+        
+        dispatch({type:'SELECT_CATEGORY', payload: category})
     }
 }
