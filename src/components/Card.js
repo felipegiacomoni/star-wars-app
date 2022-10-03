@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import '../styles/Card.css';
 
 const Card = props => {
@@ -20,7 +21,9 @@ const Card = props => {
                 </div>
                 <div className="ui bottom attached button">
                 <i className="add icon"></i>
-                    See Details
+                    <Link to="/details" className="link-details">
+                        See Details
+                    </Link>
                 </div>
             </div>
         </div>

@@ -1,3 +1,7 @@
 .div-main-cards{
     justify-content: center;
 }
+
+.link-details, .link-details:hover{
+    color: rgba(0,0,0,.6)
+}
