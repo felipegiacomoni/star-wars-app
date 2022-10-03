@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../styles/Card.css';
+import { fetchDetails } from "../actions";
+import starWars from "../apis/starWars";
 
 const Card = props => {
+
+    const navigate = useNavigate();
+
+    const onDetailsClick = async event => {
+        const response = await starWars.get(props.item.url);
+        navigate('/details', {state: response.data});
+    }
+
     return (
         //<div className="box-name">{props.item.name}<br/></div>
         <div className="ui cards div-main-cards">
@@ -19,11 +29,9 @@ const Card = props => {
                     Appears in {props.item.films.length} movies
                 </div>
                 </div>
-                <div className="ui bottom attached button">
-                <i className="add icon"></i>
-                    <Link to="/details" className="link-details">
-                        See Details
-                    </Link>
+                <div className="ui bottom attached button" onClick={onDetailsClick}>
+                    <i className="add icon"></i>
+                    See Details
                 </div>
             </div>
         </div>
@@ -31,7 +39,7 @@ const Card = props => {
 }
 
 const mapStateToProps = state => {
-    return { category: state.category }
+    return { category: state.category, details: state.details }
 }
 
-export default connect(mapStateToProps)(Card);
+export default connect(mapStateToProps, {fetchDetails})(Card);

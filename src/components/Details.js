@@ -1,9 +1,23 @@
 import React from "react";
+import { connect } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { fetchDetails } from "../actions";
+import '../styles/Details.css'
 
-const Details = () => {
+const Details = props => {
+    //read the state props from the previous useNavigate
+    let location = useLocation();
+    let details = location.state
+
     return (
-        <div className="details-div">Details</div>
+        <div className="details-div">
+            <h1 className="details-name">{details.name}</h1>
+        </div>
     )
 }
 
-export default Details;
+const mapStateToProps = state => {
+    return { details: state.details }
+}
+
+export default connect(mapStateToProps, {fetchDetails})(Details);

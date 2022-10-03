@@ -8,8 +8,8 @@ const ListResult = props => {
     const filteredList = props.results.filter(e => e.name.toUpperCase().indexOf(props.searchTerm.toUpperCase()) > -1)
     const renderedList = filteredList.map(result => {
         return(
-            <div className="four wide column">
-                <Card key={result.name} item={result} />
+            <div key={result.name} className="four wide column">
+                <Card item={result} />
             </div>
         )
     });
