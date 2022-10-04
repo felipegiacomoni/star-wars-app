@@ -9,8 +9,7 @@ const Card = props => {
     const navigate = useNavigate();
 
     const onDetailsClick = async event => {
-        const response = await starWars.get(props.item.url);
-        navigate('/details', {state: response.data});
+        navigate('/details', {state: props.item});
     }
 
     return (
