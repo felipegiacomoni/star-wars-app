@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import '../styles/Card.css';
-import { fetchDetails } from "../actions";
 import starWars from "../apis/starWars";
 
 const Card = props => {
@@ -42,4 +41,4 @@ const mapStateToProps = state => {
     return { category: state.category, details: state.details }
 }
 
-export default connect(mapStateToProps, {fetchDetails})(Card);
+export default connect(mapStateToProps,)(Card);

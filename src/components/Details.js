@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { fetchDetails } from "../actions";
 import '../styles/Details.css'
 
 const Details = props => {
@@ -20,4 +19,4 @@ const mapStateToProps = state => {
     return { details: state.details }
 }
 
-export default connect(mapStateToProps, {fetchDetails})(Details);
+export default connect(mapStateToProps)(Details);
