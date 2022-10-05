@@ -6,3 +6,17 @@
 .details-name{
     color: #feda4a;
 }
+
+.details-films{
+    color: #feda4a;
+}
+
+.details-films div{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.details-card{
+    background: black !important;
+    border-color: #feda4a !important;
+}

@@ -8,3 +8,5 @@ export const fetchResults = category => {
         dispatch({type:'SELECT_CATEGORY', payload: category})
     }
 }
+
+
