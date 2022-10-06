@@ -5,12 +5,16 @@ import '../styles/Details.css'
 import starWars from "../apis/starWars";
 import OpeningCrawl from "./OpeningCrawl";
 import PlanetCard from './DetailsCards/PlanetCard'
+import FilmCard from "./DetailsCards/FilmCard";
+import PeopleCard from "./DetailsCards/PeopleCard";
+import SpeciesCard from "./DetailsCards/SpeciesCard";
+import StarshipsCard from "./DetailsCards/StarshipsCard";
+import VehiclesCard from "./DetailsCards/VehiclesCard";
 
 const Details = props => {
     //read the state props from the previous useNavigate
     let location = useLocation();
     let details = location.state
-
 
     const [films, setFilms] = useState([])
     const [selectedFilm, setSelectedFilm] = useState(null)
@@ -33,22 +37,16 @@ const Details = props => {
         setSelectedFilm(film)
         setTimeout(() => {
             setSelectedFilm(null);
-        }, 60000)
+        }, 50000)
     }
-
-    const getRenderedList = films.map(film => {
-        return(
-            <div key={film.title} onClick={() => onFilmClick(film)}>{film.title}</div>
-        )
-    })
 
     const getCardByCategory = () => {
         switch (props.category.label){
-            case 'People': return <PlanetCard/>
-            case 'Planets': return <PlanetCard/>
-            case 'Species': return <PlanetCard/>
-            case 'Starships': return <PlanetCard/>
-            case 'Vehicles': return <PlanetCard/>
+            case 'People': return <PeopleCard item={details}/>
+            case 'Planets': return <PlanetCard item={details}/>
+            case 'Species': return <SpeciesCard item={details}/>
+            case 'Starships': return <StarshipsCard item={details}/>
+            case 'Vehicles': return <VehiclesCard item={details}/>
             default: return null
         } 
     }
@@ -60,8 +58,8 @@ const Details = props => {
     }
 
     return (
-        <div>
-            <div className="details-div">
+        <div className="details-main-div">
+            <div className="details-name-div">
                 <h1 className="details-name">{details.name}</h1>
             </div>
             <br/>
@@ -70,11 +68,7 @@ const Details = props => {
                     {getCardByCategory()}
                 </div>
             </div>
-            <div className="ui right floated segment details-card">
-                <div className="details-div">
-                    <h3 className="details-films">{getRenderedList}</h3>
-                </div>
-            </div>
+            <FilmCard films={films} onFilmClick={onFilmClick} name={details.name}/>
         </div>
     )
     

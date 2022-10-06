@@ -1,19 +1,26 @@
-.details-div{
+.details-name-div{
      display: flex;
      justify-content: center;
 }
 
-.details-name{
+.details-main-div{
     color: #feda4a;
 }
 
-.details-films{
-    color: #feda4a;
+.details-div{
+    text-align: center;
 }
 
-.details-films div{
-    padding: 5px;
+.film-card-title{
+    margin-bottom: 25px;
+}
+
+.details-films h3{
     cursor: pointer;
+}
+
+.details-films h3:hover{
+    color: #cacbcd;
 }
 
 .details-card{
