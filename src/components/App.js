@@ -4,7 +4,6 @@ import '../styles/App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "./Home";
 import Details from "./Details";
-import Pagination from "./Pagination";
 
 const App = () => {
 

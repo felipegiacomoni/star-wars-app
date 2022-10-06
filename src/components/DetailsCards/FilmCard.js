@@ -1,5 +1,6 @@
 import React from "react";
 import '../../styles/Details.css'
+import Loader from "../Loader";
 
 const FilmCard = ({films, onFilmClick, name}) => {
 
@@ -14,7 +15,7 @@ const FilmCard = ({films, onFilmClick, name}) => {
             <div className="details-div">
                 <h2 className="film-card-title">Choose a movie from {name}</h2>
                 <div className="details-films">
-                    {getRenderedList}
+                    {films.length > 0 ? getRenderedList : <Loader/>}
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@
 .search-bar-background{
     background: black !important;
     display: flex;
+    margin-bottom: 0px !important;
 }
 
 .div-search-bar{

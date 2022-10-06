@@ -13,7 +13,7 @@ const Pagination = props => {
         props.fetchResults(props.category,'/?' + getRequestedPage(url));
     }
 
-    if(props.pagination == null || props.pagination == undefined){
+    if(props.pagination === null || props.pagination === undefined){
         return null;
     }
 
