@@ -3,10 +3,6 @@ import { useLocation } from "react-router-dom";
 import '../styles/OpeningCrawl.css'
 
 const OpeningCrawl = props => {
-
-    let location = useLocation();
-    let film = location.state
-
     return (
         <div>
             <div className="fade"></div>
