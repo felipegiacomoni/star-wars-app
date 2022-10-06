@@ -32,7 +32,7 @@ const Details = props => {
             setFilms(_films)
         }
         _fetchFilms()
-    }, [])
+    }, [details.films])
 
     const onFilmClick = film => {
         setSelectedFilm(film)
