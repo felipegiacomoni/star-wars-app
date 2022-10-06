@@ -21,16 +21,18 @@ const Details = props => {
     
     //TODO include memoize
     useEffect(() => {
-        (async () => {
+        const filmsDetails = details.films
+        const _fetchFilms = async () => {
             let _films = []
             await Promise.all(
-                details.films.map(async film => {
+                filmsDetails.map(async film => {
                     const response = await starWars.get(film);
                     _films.push(response.data) 
                 })
             )
             setFilms(_films)
-        })()
+        }
+        _fetchFilms()
     }, [])
 
     const onFilmClick = film => {
