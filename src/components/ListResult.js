@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import "../styles/ListResult.css";
 import Card from "./Card";
+import Pagination from "./Pagination";
 
 const ListResult = props => {
-   
+
     const filteredList = props.results.filter(e => e.name.toUpperCase().indexOf(props.searchTerm.toUpperCase()) > -1)
     const renderedList = filteredList.map(result => {
         return(
@@ -14,13 +15,24 @@ const ListResult = props => {
         )
     });
 
+    if(renderedList.length === 0){
+        return (
+            <div className="div-no-results">
+                No results
+            </div>    
+        )
+    }
+
     return (
-        <div className="ui grid">{renderedList}</div>
+        <div>
+            <div className="ui grid">{renderedList}</div>
+            <Pagination category={props.category} pagination={props.pagination}/>
+        </div>
     )
 }
 
 const mapStateToProps = state => {
-    return {results: state.results, category: state.category}
+    return {results: state.results, category: state.category, pagination: state.pagination}
 }
 
 export default connect(mapStateToProps)(ListResult);

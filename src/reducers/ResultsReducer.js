@@ -1,7 +1,7 @@
 const ResultsReducer = (state = [], action) => {
     switch (action.type){
         case 'FETCH_RESULTS':
-            return action.payload;
+            return action.payload.results;
         default:
             return state;
     }

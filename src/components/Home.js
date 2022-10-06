@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ListResult from "./ListResult";
+import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
 
 
