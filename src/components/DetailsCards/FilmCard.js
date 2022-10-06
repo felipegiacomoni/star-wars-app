@@ -13,7 +13,7 @@ const FilmCard = ({films, onFilmClick, name}) => {
     return (
         <div className="ui right floated segment details-card">
             <div className="details-div">
-                <h2 className="film-card-title">Choose a movie from {name}</h2>
+                <h2 className="film-card-title">Choose a movie with {name}</h2>
                 <div className="details-films">
                     {films.length > 0 ? getRenderedList : <Loader/>}
                 </div>
