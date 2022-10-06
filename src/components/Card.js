@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import '../styles/Card.css';
-import starWars from "../apis/starWars";
 
 const Card = props => {
 
@@ -20,7 +19,7 @@ const Card = props => {
                 <img 
                     alt={props.category.label}
                     className="right floated mini ui image" 
-                    src={require(`../styles/${props.category.icon !== undefined ? props.category.icon : 'star_wars_logo.png'}`)}
+                    src={require(`../styles/images/${props.category.icon !== undefined ? props.category.icon : 'star_wars_logo.png'}`)}
                 />
                 <div className="header">{props.item.name}</div>
                 <div className="description">

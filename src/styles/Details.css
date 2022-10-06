@@ -19,4 +19,6 @@
 .details-card{
     background: black !important;
     border-color: #feda4a !important;
+    margin: 20px !important;
+    width: 45%;
 }

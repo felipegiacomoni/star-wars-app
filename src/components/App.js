@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import logo from '../styles/star_wars_logo.png';
+import logo from '../styles/images/star_wars_logo.png';
 import '../styles/App.css'
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from "./Home";
 import Details from "./Details";
-import OpeningCrawl from "./OpeningCrawl";
 
 const App = () => {
 

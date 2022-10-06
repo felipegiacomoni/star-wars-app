@@ -2,16 +2,11 @@ import React from "react";
 import CategoryButton from "./CategoryButton";
 import '../styles/SearchBar.css';
 import { connect } from "react-redux";
+import { categories } from "../utils/Constants";
+
 
 const SearchBar = props => {
-    const categories = [
-        // {label: 'Films', param: 'films'},
-        {label: 'People', param: 'people', icon: 'people.webp'},
-        {label: 'Planets', param: 'planets', icon: 'planets.webp'},
-        {label: 'Species', param: 'species', icon: 'species.png'},
-        {label: 'Starships', param: 'starships', icon: 'starships.webp'},
-        {label: 'Vehicles', param: 'vehicles', icon: 'vehicle.png'},
-    ] 
+     
 
     const getButtons = () =>{
         return(

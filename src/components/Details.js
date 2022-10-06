@@ -4,11 +4,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import '../styles/Details.css'
 import starWars from "../apis/starWars";
 import OpeningCrawl from "./OpeningCrawl";
+import PlanetCard from './DetailsCards/PlanetCard'
 
 const Details = props => {
     //read the state props from the previous useNavigate
     let location = useLocation();
     let details = location.state
+
 
     const [films, setFilms] = useState([])
     const [selectedFilm, setSelectedFilm] = useState(null)
@@ -40,6 +42,17 @@ const Details = props => {
         )
     })
 
+    const getCardByCategory = () => {
+        switch (props.category.label){
+            case 'People': return <PlanetCard/>
+            case 'Planets': return <PlanetCard/>
+            case 'Species': return <PlanetCard/>
+            case 'Starships': return <PlanetCard/>
+            case 'Vehicles': return <PlanetCard/>
+            default: return null
+        } 
+    }
+
     if(selectedFilm){
         return(
             <OpeningCrawl film={selectedFilm}/>
@@ -52,6 +65,11 @@ const Details = props => {
                 <h1 className="details-name">{details.name}</h1>
             </div>
             <br/>
+            <div className="ui left floated segment details-card">
+                <div className="details-div">
+                    {getCardByCategory()}
+                </div>
+            </div>
             <div className="ui right floated segment details-card">
                 <div className="details-div">
                     <h3 className="details-films">{getRenderedList}</h3>
@@ -63,7 +81,7 @@ const Details = props => {
 }
 
 const mapStateToProps = state => {
-    return { details: state.details}
+    return { details: state.details, category: state.category }
 }
 
 export default connect(mapStateToProps)(Details);
