@@ -10,6 +10,7 @@ import PeopleCard from "./DetailsCards/PeopleCard";
 import SpeciesCard from "./DetailsCards/SpeciesCard";
 import StarshipsCard from "./DetailsCards/StarshipsCard";
 import VehiclesCard from "./DetailsCards/VehiclesCard";
+import BackButton from "./BackButton";
 
 const Details = props => {
     //read the state props from the previous useNavigate
@@ -63,6 +64,7 @@ const Details = props => {
             <div className="details-name-div">
                 <h1 className="details-name">{details.name}</h1>
             </div>
+            <BackButton url="/"/>
             <br/>
             <div className="ui left floated segment details-card">
                 <div className="details-div">
