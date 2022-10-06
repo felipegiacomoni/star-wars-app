@@ -21,7 +21,7 @@ const Details = props => {
     
     //TODO include memoize
     useEffect(() => {
-        (async () => {
+        const _fetchFilms = async () => {
             let _films = []
             await Promise.all(
                 details.films.map(async film => {
@@ -30,7 +30,8 @@ const Details = props => {
                 })
             )
             setFilms(_films)
-        })()
+        }
+        _fetchFilms();
     }, [])
 
     const onFilmClick = film => {
