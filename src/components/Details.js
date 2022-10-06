@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import '../styles/Details.css'
 import starWars from "../apis/starWars";
 import OpeningCrawl from "./OpeningCrawl";
