@@ -1,6 +1,5 @@
 import React from "react";
 import '../styles/OpeningCrawl.css'
-import BackButton from "./BackButton";
 
 const OpeningCrawl = props => {
     return (
