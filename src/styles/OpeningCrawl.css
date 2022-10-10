@@ -4,6 +4,10 @@ body {
     background: #000;
     overflow: hidden;
   }
+
+  .main-div-crawl{
+    margin-top: 25px;
+  }
   
   .fade {
     position: relative;

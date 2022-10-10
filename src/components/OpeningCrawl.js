@@ -4,7 +4,7 @@ import BackButton from "./BackButton";
 
 const OpeningCrawl = props => {
     return (
-        <div>
+        <div className="main-div-crawl">
             <div className="fade"></div>
             <section className="star-wars">
                 <div className="crawl">
