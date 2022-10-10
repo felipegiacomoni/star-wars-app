@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import "../styles/ListResult.css";
 import Card from "./Card";
 import Pagination from "./Pagination";
+import Loader from "./Loader";
 
 const ListResult = props => {
 
@@ -14,6 +15,14 @@ const ListResult = props => {
             </div>
         )
     });
+
+    if(props.isLoading){
+        return (
+            <div className="list-result-loader">
+                <Loader />
+            </div>
+        )
+    }
 
     if(renderedList.length === 0){
         return (
@@ -36,7 +45,8 @@ const mapStateToProps = state => {
         results: state.results.results, 
         category: state.category, 
         next: state.results.next,
-        previous: state.results.previous
+        previous: state.results.previous,
+        isLoading: state.results.isLoading
     }
 }
 

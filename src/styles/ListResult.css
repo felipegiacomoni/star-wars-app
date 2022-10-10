@@ -9,3 +9,7 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.list-result-loader{
+    margin-top: 150px !important;
+}
