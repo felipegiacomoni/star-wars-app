@@ -26,13 +26,18 @@ const ListResult = props => {
     return (
         <div>
             <div className="ui grid">{renderedList}</div>
-            <Pagination category={props.category} pagination={props.pagination}/>
+            <Pagination category={props.category} next={props.next} previous={props.previous}/>
         </div>
     )
 }
 
 const mapStateToProps = state => {
-    return {results: state.results, category: state.category, pagination: state.pagination}
+    return {
+        results: state.results.results, 
+        category: state.category, 
+        next: state.results.next,
+        previous: state.results.previous
+    }
 }
 
 export default connect(mapStateToProps)(ListResult);

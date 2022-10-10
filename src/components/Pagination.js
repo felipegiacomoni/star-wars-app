@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { fetchResults } from "../actions";
 
 const Pagination = props => {
-
     const getRequestedPage = url => {
         return url.split("?")[1]
     }
@@ -13,23 +12,19 @@ const Pagination = props => {
         props.fetchResults(props.category,'/?' + getRequestedPage(url));
     }
 
-    if(props.pagination === null || props.pagination === undefined){
-        return null;
-    }
-
     return (
         <div className="pagination-main-div">
             <div className="ui buttons">
                 <button 
-                    onClick={() => onButtonClick(props.pagination.previous)} 
-                    className={`ui labeled icon button ${props.pagination.previous === null ? 'disabled' : ''}`}
+                    onClick={() => onButtonClick(props.previous)} 
+                    className={`ui labeled icon button ${props.previous === null ? 'disabled' : ''}`}
                 >
                     <i className="left chevron icon"></i>
                     Previous
                 </button>
                 <button 
-                    onClick={() => onButtonClick(props.pagination.next)} 
-                    className={`ui right labeled icon button ${props.pagination.next === null ? 'disabled' : ''}`}
+                    onClick={() => onButtonClick(props.next)} 
+                    className={`ui right labeled icon button ${props.next === null ? 'disabled' : ''}`}
                 >
                     Next
                     <i className="right chevron icon"></i>
