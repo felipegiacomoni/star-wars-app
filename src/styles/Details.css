@@ -29,3 +29,12 @@
     margin: 20px !important;
     width: 45%;
 }
+
+@media only screen and (max-width: 768px) {
+    .details-card{
+        width: 90%;
+    }
+    .details-main-div{
+        margin-bottom: 10px;
+    }
+  }

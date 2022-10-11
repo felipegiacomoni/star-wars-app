@@ -6,3 +6,13 @@
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-width: 768px) {
+    .background-app{
+        overflow-y: scroll;
+        height: 100%;
+    }
+    #root{
+        height: 100%;
+    }
+  }
