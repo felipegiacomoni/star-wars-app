@@ -13,3 +13,10 @@
 .list-result-loader{
     margin-top: 150px !important;
 }
+
+@media only screen and (max-width: 768px) {
+    .ui.grid{
+        margin: 0px;
+    }
+}
+
