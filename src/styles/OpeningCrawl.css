@@ -60,3 +60,9 @@ body {
       transform: rotateX(25deg) translateZ(-2500px);
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .main-div-crawl{
+      margin-top: 30px;
+    }
+  }
