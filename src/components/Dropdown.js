@@ -34,7 +34,7 @@ const Dropdown = ({options, selected, onSelectedChange, defaultLabel}) => {
                     onClick={() => setOpen(!open)}
                 >
                     <i className="dropdown icon"></i>
-                    <div className="text">{selected != null ? selected.label : defaultLabel}</div>
+                    <div className="text">{selected !== '' ? selected.label : defaultLabel}</div>
                     <div className={`menu ${open ? 'visible transition' : ''}`}>
                         {renderedOptions}
                     </div>

@@ -9,7 +9,7 @@ import { fetchResults } from '../actions'
 
 const SearchBar = props => {
 
-    const [selected, setSelected] = useState(null)
+    const [selected, setSelected] = useState(props.category)
      
     const getButtons = () => {
         return(
@@ -51,4 +51,8 @@ const SearchBar = props => {
     )
 }
 
-export default connect(null, {fetchResults})(SearchBar);
+const mapStateToProps = state => {
+    return { category: state.category }
+}
+
+export default connect(mapStateToProps, {fetchResults})(SearchBar);
