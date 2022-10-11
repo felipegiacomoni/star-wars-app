@@ -9,7 +9,7 @@ import { fetchResults } from '../actions'
 
 const SearchBar = props => {
 
-    const [selected, setSelected] = useState(categories[0])
+    const [selected, setSelected] = useState(null)
      
     const getButtons = () => {
         return(
@@ -41,7 +41,7 @@ const SearchBar = props => {
             </form>
             <div className="ui buttons div-category-select">
                 {isMobile ? 
-                    <Dropdown label="Select a category"
+                    <Dropdown defaultLabel="Select a category"
                         options={categories}
                         selected={selected}
                         onSelectedChange={onDropdownSelect}/> 
