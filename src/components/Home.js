@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ListResult from "./ListResult";
 import SearchBar from "./SearchBar";
+import '../styles/Home.css'
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div className="div-home">
             <SearchBar onFormSubmit={onFormSubmit}/>
             <ListResult searchTerm={searchTerm}/>
         </div>

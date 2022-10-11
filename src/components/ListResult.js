@@ -4,13 +4,14 @@ import "../styles/ListResult.css";
 import Card from "./Card";
 import Pagination from "./Pagination";
 import Loader from "./Loader";
+import { isMobile } from "react-device-detect";
 
 const ListResult = props => {
 
     const filteredList = props.results.filter(e => e.name.toUpperCase().indexOf(props.searchTerm.toUpperCase()) > -1)
     const renderedList = filteredList.map(result => {
         return(
-            <div key={result.name} className={`${window.innerWidth > 768 ? 'four' : 'eight'} wide column`}>
+            <div key={result.name} className={`${isMobile ? 'eight' : 'four'} wide column`}>
                 <Card item={result} />
             </div>
         )
