@@ -22,4 +22,7 @@
         display: block;
         width: 100%;
     }
+    .input-search-bar{
+        margin: 0px 0px 5px 7px !important;
+    }
   }
