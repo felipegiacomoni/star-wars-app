@@ -19,6 +19,8 @@ const Details = props => {
 
     const [films, setFilms] = useState([])
     const [selectedFilm, setSelectedFilm] = useState(null)
+    const [timeoutId, setTimeoutId] = useState(null)
+
     
     //TODO include memoize
     useEffect(() => {
@@ -37,9 +39,10 @@ const Details = props => {
 
     const onFilmClick = film => {
         setSelectedFilm(film)
-        setTimeout(() => {
+        let _timeoutId = setTimeout(() => {
             setSelectedFilm(null);
         }, 50000)
+        setTimeoutId(_timeoutId)
     }
 
     const getCardByCategory = () => {
@@ -53,10 +56,15 @@ const Details = props => {
         } 
     }
 
+    const callbackBackButton = () => {
+        setSelectedFilm(null);
+        clearTimeout(timeoutId);
+    }
+
     if(selectedFilm){
         return(
             <div>
-                <BackButton callback={() => setSelectedFilm(null)}/>
+                <BackButton callback={callbackBackButton}/>
                 <OpeningCrawl film={selectedFilm}/>
             </div>
         )
