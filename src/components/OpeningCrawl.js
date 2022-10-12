@@ -2,6 +2,8 @@ import React from "react";
 import '../styles/OpeningCrawl.css'
 
 const OpeningCrawl = props => {
+    window.scrollTo(0,0);
+
     return (
         <div className="main-div-crawl">
             <div className="fade"></div>

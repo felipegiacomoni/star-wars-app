@@ -10,8 +10,12 @@ const CategoryButton = props => {
     }
 
     return (
-        <button className="ui button" onClick={onButtonClick}>{props.category.label}</button>
+        <button className={`ui button ${props.categorySelected === props.category ? 'active' : ''}`} onClick={onButtonClick}>{props.category.label}</button>
     )
 }
 
-export default connect(null, {fetchResults})(CategoryButton);
+const mapStateToProps = state => {
+    return { categorySelected: state.category }
+}
+
+export default connect(mapStateToProps, {fetchResults})(CategoryButton);
