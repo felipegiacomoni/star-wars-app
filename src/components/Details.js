@@ -62,12 +62,7 @@ const Details = props => {
     }
 
     if(selectedFilm){
-        return(
-            <div>
-                <BackButton callback={callbackBackButton}/>
-                <OpeningCrawl film={selectedFilm}/>
-            </div>
-        )
+        return <OpeningCrawl callback={callbackBackButton} film={selectedFilm}/>
     }
 
     return (

@@ -7,6 +7,10 @@ body {
 
   .main-div-crawl{
     margin-top: 25px;
+    position: absolute;
+    top: 0;
+    background: black;
+    overflow-y: hidden;
   }
   
   .fade {

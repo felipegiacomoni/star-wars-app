@@ -1,0 +1,10 @@
+.close-button{
+    font-size: 20px;
+    cursor: pointer;
+    color: #feda4a;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 11px;
+    margin-right: 11px;
+}
