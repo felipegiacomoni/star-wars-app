@@ -15,7 +15,7 @@ const SearchBar = props => {
     useEffect(() => {
         const _timeoutId = setTimeout(() => {
             //term != resultTerm avoids to reload the list when the user come back from detail screen
-            if(props.category && term != props.resultTerm){
+            if(props.category && term !== props.resultTerm){
                 props.fetchResults(props.category, term, '');
             }
         }, 500);

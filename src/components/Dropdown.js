@@ -18,7 +18,7 @@ const Dropdown = ({options, selected, onSelectedChange, defaultLabel}) => {
     }, []);
 
     const renderedOptions = options.map(option => {
-        if(selected != null && option.param === selected.param) return null;
+        if(selected !== null && option.param === selected.param) return null;
         return(
             <div key={option.param} className="item" onClick={() => onSelectedChange(option)}>
                 {option.label}
