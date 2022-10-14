@@ -8,8 +8,7 @@ import { isMobile } from "react-device-detect";
 
 const ListResult = props => {
 
-    const filteredList = props.results.filter(e => e.name.toUpperCase().indexOf(props.searchTerm.toUpperCase()) > -1)
-    const renderedList = filteredList.map(result => {
+    const renderedList = props.results.map(result => {
         return(
             <div key={result.name} className={`${isMobile ? 'eight' : 'four'} wide column`}>
                 <Card item={result} />
@@ -36,7 +35,7 @@ const ListResult = props => {
     return (
         <div>
             <div className="ui grid">{renderedList}</div>
-            <Pagination category={props.category} next={props.next} previous={props.previous}/>
+            <Pagination category={props.category} searchTerm={props.searchTerm} next={props.next} previous={props.previous}/>
         </div>
     )
 }

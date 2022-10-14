@@ -5,7 +5,7 @@ import { fetchResults } from "../actions";
 
 const CategoryButton = props => {
     const onButtonClick = event => {
-        props.fetchResults(props.category, '');
+        props.fetchResults(props.category, props.term, '');
         event.preventDefault();
     }
 

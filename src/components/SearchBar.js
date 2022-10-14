@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CategoryButton from "./CategoryButton";
 import '../styles/SearchBar.css';
 import { connect } from "react-redux";
@@ -10,33 +10,49 @@ import { fetchResults } from '../actions'
 const SearchBar = props => {
 
     const [selected, setSelected] = useState(props.category)
+    const [term, setTerm] = useState('')
+
+    useEffect(() => {
+        const _timeoutId = setTimeout(() => {
+            //term != resultTerm avoids to reload the list when the user come back from detail screen
+            if(props.category && term != props.resultTerm){
+                props.fetchResults(props.category, term, '');
+            }
+        }, 500);
+
+        return () => {
+            clearTimeout(_timeoutId);
+        }
+    }, [term])
+
+    //get the term from the store and set in the state, so the search term appears in the screen when the user go backs from the detail screen
+    useEffect(() => {
+        setTerm(props.resultTerm)
+    }, [])
      
     const getButtons = () => {
         return(
             categories.map(cat => {
-                return <CategoryButton key={cat.param} category={cat}/>
+                return <CategoryButton term={term} key={cat.param} category={cat}/>
             })
         )
     }
 
-    const onFormSubmit = event => {
-        event.preventDefault();
-    }
-
     const onInputChange = event => {
+        setTerm(event.target.value);
         props.onFormSubmit(event.target.value);
     }
 
     const onDropdownSelect = item => {
         setSelected(item)
-        props.fetchResults(item, '');
+        props.fetchResults(item, term, '');
     }
 
     return (
         <div className="ui segment search-bar search-bar-background ">
-            <form className="ui form form-search-bar" onSubmit={onFormSubmit}>
+            <form className="ui form form-search-bar" onSubmit={e => e.preventDefault()}>
                 <div className="field div-search-bar">
-                    <input type="text" placeholder="Filter on this page..." onChange={onInputChange} className="input-search-bar"/>
+                    <input value={term} type="text" placeholder="Search..." onChange={onInputChange} className="input-search-bar"/>
                 </div>
             </form>
             <div className="ui buttons div-category-select">
@@ -52,7 +68,7 @@ const SearchBar = props => {
 }
 
 const mapStateToProps = state => {
-    return { category: state.category }
+    return { category: state.category, resultTerm: state.results.term }
 }
 
 export default connect(mapStateToProps, {fetchResults})(SearchBar);
