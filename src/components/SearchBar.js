@@ -23,7 +23,7 @@ const SearchBar = props => {
         return () => {
             clearTimeout(_timeoutId);
         }
-    }, [term, props.category, props.resultTerm])
+    }, [term, props.category, props.resultTerm, props.fetchResults])
 
     //get the term from the store and set in the state, so the search term appears in the screen when the user go backs from the detail screen
     useEffect(() => {
