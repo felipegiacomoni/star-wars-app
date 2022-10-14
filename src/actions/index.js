@@ -8,21 +8,16 @@ export const fetchResults = (category, search, page) => {
 
         dispatch({type:'FETCH_RESULTS_LOADED', payload: response.data})
         dispatch({type:'SELECT_CATEGORY', payload: category})
-        if(search !== ''){
-            dispatch({type:'SET_TERM', payload: search})
-        }
+        dispatch({type:'SET_TERM', payload: search})
     }
 }
 
 const _getParameters = (search, page) => {
-    if(search !== '' && page !== ''){
-        return '/?search=' + search + '&' + page
+    if(page !== ''){
+        return '/?' + page
     }
     if(search !== ''){
         return '/?search=' + search
-    }
-    if(page !== ''){
-        return '/?' + page
     }
     return ''
 }

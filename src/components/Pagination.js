@@ -9,7 +9,7 @@ const Pagination = props => {
     }
 
     const onButtonClick = url => {
-        props.fetchResults(props.category, '', getRequestedPage(url));
+        props.fetchResults(props.category, props.searchTerm, getRequestedPage(url));
     }
 
     if(props.previous === null && props.next === null){
