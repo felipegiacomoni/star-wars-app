@@ -27,7 +27,7 @@ const ListResult = props => {
     if(renderedList.length === 0){
         return (
             <div className="div-no-results">
-                {props.category != '' ? 'No results' : 'Select a category'}
+                {props.category !== '' ? 'No results' : 'Select a category'}
             </div>    
         )
     }
