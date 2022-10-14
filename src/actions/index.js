@@ -7,8 +7,10 @@ export const fetchResults = (category, search, page) => {
         const response = await starWars.get(`/${category.param}${params}`)
 
         dispatch({type:'FETCH_RESULTS_LOADED', payload: response.data})
-        dispatch({type:'SET_TERM', payload: search})
         dispatch({type:'SELECT_CATEGORY', payload: category})
+        if(search !== ''){
+            dispatch({type:'SET_TERM', payload: search})
+        }
     }
 }
 
