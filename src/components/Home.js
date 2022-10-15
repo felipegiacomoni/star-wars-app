@@ -6,16 +6,10 @@ import '../styles/Home.css'
 
 const Home = () => {
 
-    const [searchTerm, setSearchTerm] = useState('');
-    
-    const onFormSubmit = searchBarTerm => {
-        setSearchTerm(searchBarTerm);
-    }
-
     return (
         <div className="div-home">
-            <SearchBar onFormSubmit={onFormSubmit}/>
-            <ListResult searchTerm={searchTerm}/>
+            <SearchBar />
+            <ListResult />
         </div>
     )
 }

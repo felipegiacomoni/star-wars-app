@@ -38,11 +38,6 @@ const SearchBar = props => {
         )
     }
 
-    const onInputChange = event => {
-        setTerm(event.target.value);
-        props.onFormSubmit(event.target.value);
-    }
-
     const onDropdownSelect = item => {
         setSelected(item)
         props.fetchResults(item, term, '');
@@ -52,7 +47,7 @@ const SearchBar = props => {
         <div className="ui segment search-bar search-bar-background ">
             <form className="ui form form-search-bar" onSubmit={e => e.preventDefault()}>
                 <div className="field div-search-bar">
-                    <input value={term} type="text" placeholder="Search..." onChange={onInputChange} className="input-search-bar"/>
+                    <input value={term} type="text" placeholder="Search..." onChange={e => setTerm(e.target.value)} className="input-search-bar"/>
                 </div>
             </form>
             <div className="ui buttons div-category-select">

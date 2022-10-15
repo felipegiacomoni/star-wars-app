@@ -9,7 +9,7 @@ const Pagination = props => {
     }
 
     const onButtonClick = url => {
-        props.fetchResults(props.category, props.searchTerm, getRequestedPage(url));
+        props.fetchResults(props.category, props.resultTerm, getRequestedPage(url));
     }
 
     if(props.previous === null && props.next === null){
@@ -38,5 +38,8 @@ const Pagination = props => {
     )
 }
 
+const mapStateToProps = state => {
+    return {resultTerm: state.results.term}
+}
 
-export default connect(null, {fetchResults})(Pagination);
+export default connect(mapStateToProps, {fetchResults})(Pagination);

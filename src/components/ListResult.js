@@ -35,7 +35,7 @@ const ListResult = props => {
     return (
         <div>
             <div className="ui grid">{renderedList}</div>
-            <Pagination category={props.category} searchTerm={props.searchTerm} next={props.next} previous={props.previous}/>
+            <Pagination category={props.category} next={props.next} previous={props.previous}/>
         </div>
     )
 }
