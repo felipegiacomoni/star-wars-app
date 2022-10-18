@@ -6,7 +6,6 @@ import { fetchResults, setTerm } from "../actions";
 const CategoryButton = props => {
     const onButtonClick = event => {
         props.fetchResults(props.category, props.term, '');
-        props.setTerm(props.term)
         event.preventDefault();
     }
 
