@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CategoryButton from "./CategoryButton";
 import '../styles/SearchBar.css';
 import { connect } from "react-redux";
@@ -23,7 +23,6 @@ const SearchBar = props => {
     const onDropdownSelect = item => {
         setSelected(item)
         props.fetchResults(item, props.term, '');
-        //props.setTerm(term);
     }
 
     const onInputChange = e => {
