@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/Pagination.css';
 import { connect } from 'react-redux';
-import { fetchResults } from "../actions";
+import { fetchResults, setTerm } from "../actions";
 
 const Pagination = props => {
     const getRequestedPage = url => {
@@ -10,6 +10,7 @@ const Pagination = props => {
 
     const onButtonClick = url => {
         props.fetchResults(props.category, props.resultTerm, getRequestedPage(url));
+        props.setTerm(props.resultTerm);
     }
 
     if(props.previous === null && props.next === null){
@@ -39,7 +40,7 @@ const Pagination = props => {
 }
 
 const mapStateToProps = state => {
-    return {resultTerm: state.results.term}
+    return {resultTerm: state.search.term}
 }
 
-export default connect(mapStateToProps, {fetchResults})(Pagination);
+export default connect(mapStateToProps, {fetchResults, setTerm})(Pagination);

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { categories } from "../utils/Constants";
 import { isMobile } from "react-device-detect";
 import Dropdown from "./Dropdown";
-import { fetchResults } from '../actions'
+import { fetchResults, setTerm } from '../actions'
 
 const SearchBar = props => {
 
@@ -17,6 +17,7 @@ const SearchBar = props => {
             //term != resultTerm avoids to reload the list when the user come back from detail screen
             if(props.category && term !== props.resultTerm){
                 props.fetchResults(props.category, term, '');
+                props.setTerm(term);
             }
         }, 500);
 
@@ -41,6 +42,7 @@ const SearchBar = props => {
     const onDropdownSelect = item => {
         setSelected(item)
         props.fetchResults(item, term, '');
+        props.setTerm(term);
     }
 
     return (
@@ -63,7 +65,7 @@ const SearchBar = props => {
 }
 
 const mapStateToProps = state => {
-    return { category: state.search.category, resultTerm: state.results.term }
+    return { category: state.search.category, resultTerm: state.search.term }
 }
 
-export default connect(mapStateToProps, {fetchResults})(SearchBar);
+export default connect(mapStateToProps, {fetchResults, setTerm})(SearchBar);

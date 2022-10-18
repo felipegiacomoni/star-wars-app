@@ -2,8 +2,7 @@ const INITIAL_STATE = {
     results: [],
     isLoading: false,
     next: null,
-    previous: null,
-    term: ''
+    previous: null
 }
 
 const ResultsReducer = (state = INITIAL_STATE, action) => {
@@ -17,8 +16,6 @@ const ResultsReducer = (state = INITIAL_STATE, action) => {
                 };
         case 'FETCH_RESULTS_LOADING':
             return {...state, isLoading: true}
-        case 'SET_TERM':
-            return {...state, term: action.payload}
         default:
             return state;
     }

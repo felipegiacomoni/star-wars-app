@@ -8,7 +8,12 @@ export const fetchResults = (category, search, page) => {
 
         dispatch({type:'FETCH_RESULTS_LOADED', payload: response.data})
         dispatch({type:'SELECT_CATEGORY', payload: category})
-        dispatch({type:'SET_TERM', payload: search})
+    }
+}
+
+export const setTerm = term => {
+    return dispatch => {
+        dispatch ({type:'SET_TERM', payload: term})
     }
 }
 

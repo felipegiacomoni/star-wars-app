@@ -1,11 +1,12 @@
 import React from "react";
 import '../styles/CategoryButton.css';
 import { connect } from 'react-redux';
-import { fetchResults } from "../actions";
+import { fetchResults, setTerm } from "../actions";
 
 const CategoryButton = props => {
     const onButtonClick = event => {
         props.fetchResults(props.category, props.term, '');
+        props.setTerm(props.term)
         event.preventDefault();
     }
 
@@ -18,4 +19,4 @@ const mapStateToProps = state => {
     return { categorySelected: state.search.category }
 }
 
-export default connect(mapStateToProps, {fetchResults})(CategoryButton);
+export default connect(mapStateToProps, {fetchResults, setTerm})(CategoryButton);
