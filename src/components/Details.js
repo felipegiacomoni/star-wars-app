@@ -77,7 +77,7 @@ const Details = props => {
                     {getCardByCategory()}
                 </div>
             </div>
-            <FilmCard films={films} onFilmClick={onFilmClick} name={details.name}/>
+            <FilmCard showError={details.films.length === 0} films={films} onFilmClick={onFilmClick} name={details.name}/>
         </div>
     )
     
