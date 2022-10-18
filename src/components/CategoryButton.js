@@ -15,7 +15,7 @@ const CategoryButton = props => {
 }
 
 const mapStateToProps = state => {
-    return { categorySelected: state.category }
+    return { categorySelected: state.search.category }
 }
 
 export default connect(mapStateToProps, {fetchResults})(CategoryButton);

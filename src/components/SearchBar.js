@@ -63,7 +63,7 @@ const SearchBar = props => {
 }
 
 const mapStateToProps = state => {
-    return { category: state.category, resultTerm: state.results.term }
+    return { category: state.search.category, resultTerm: state.results.term }
 }
 
 export default connect(mapStateToProps, {fetchResults})(SearchBar);

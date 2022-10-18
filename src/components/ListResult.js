@@ -43,7 +43,7 @@ const ListResult = props => {
 const mapStateToProps = state => {
     return {
         results: state.results.results, 
-        category: state.category, 
+        category: state.search.category, 
         next: state.results.next,
         previous: state.results.previous,
         isLoading: state.results.isLoading

@@ -36,7 +36,7 @@ const Card = props => {
 }
 
 const mapStateToProps = state => {
-    return { category: state.category, details: state.details }
+    return { category: state.search.category, details: state.details }
 }
 
 export default connect(mapStateToProps,)(Card);

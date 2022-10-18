@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import ResultsReducer from './ResultsReducer';
-import CategoryReducer from './CategoryReducer';
+import SearchReducer from './SearchReducer';
 
 export default combineReducers({
     results: ResultsReducer,
-    category: CategoryReducer
+    search: SearchReducer
 });
