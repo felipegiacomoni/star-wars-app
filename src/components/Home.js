@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ListResult from "./ListResult";
 import SearchBar from "./SearchBar";
 import '../styles/Home.css'
