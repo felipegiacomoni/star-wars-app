@@ -12,7 +12,6 @@ const Card = props => {
     }
 
     return (
-        //<div className="box-name">{props.item.name}<br/></div>
         <div className="ui cards div-main-cards">
             <div className="card">
                 <div className="content">

@@ -13,7 +13,6 @@ import VehiclesCard from "./DetailsCards/VehiclesCard";
 import BackButton from "./BackButton";
 
 const Details = props => {
-    //read the state props from the previous useNavigate
     let location = useLocation();
     let details = location.state
 
@@ -21,8 +20,6 @@ const Details = props => {
     const [selectedFilm, setSelectedFilm] = useState(null)
     const [timeoutId, setTimeoutId] = useState(null)
 
-    
-    //TODO include memoize
     useEffect(() => {
         const _fetchFilms = async () => {
             let _films = []
