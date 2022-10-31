@@ -81,7 +81,7 @@ const Details = props => {
 }
 
 const mapStateToProps = state => {
-    return { details: state.details, category: state.search.category }
+    return { category: state.search.category }
 }
 
 export default connect(mapStateToProps)(Details);
