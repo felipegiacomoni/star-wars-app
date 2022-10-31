@@ -7,7 +7,7 @@ const Card = props => {
 
     const navigate = useNavigate();
 
-    const onDetailsClick = async event => {
+    const onDetailsClick = event => {
         navigate('/details', {state: props.item});
     }
 
