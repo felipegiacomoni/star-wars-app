@@ -14,7 +14,7 @@ const Pagination = props => {
     }
 
     if(props.previous === null && props.next === null){
-        return null;
+        return null
     }
 
     return (
