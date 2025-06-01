@@ -22,7 +22,7 @@ const SearchBar = props => {
 
     const onDropdownSelect = item => {
         setSelected(item)
-        props.fetchResults(item, props.term, '');
+        props.fetchResults(item, props.term, '')
     }
 
     const onInputChange = e => {
